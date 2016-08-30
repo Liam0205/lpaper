@@ -1,0 +1,420 @@
+%!TEX program = xelatex
+\documentclass{lpaper} % use PDF command to enable PDFLaTeX driver
+\usepackage{textcomp}
+\usepackage[UTF8, scheme = plain]{ctex}
+
+\newcommand{\pkg}{\textsf}
+
+\title{\LaTeX{} 模板：\pkg{lpaper} 指南}
+
+\author{模板支持\inst{1}\ucm\inst{2}\email{email@first.author.edu},
+        多个\inst{1},
+        作者\inst{2}\ucm\inst{3}\email{email@third.author.edu}}
+
+\institute{
+     \inst{1} 同时支持,\\
+     多个, 单位, 地址
+     \inst{2} Second institution,\\
+     address, ZIP-code City, Country
+     \inst{3} Third institution,\\
+     address, ZIP-code City, Country
+          }
+
+\abstract{这是 \pkg{lpaper} 模板的使用指南。模板本身是基于 \pkg{revtex4-1} 为西文定制的，不过也可以通过 \pkg{ctex} 宏集支持中文。}
+
+\keywords{这是; 关键字}
+
+\begin{document}
+\maketitle
+
+\section{随便说说}
+
+下面是英文的介绍。
+
+\subsection{Paper elements}
+
+\begin{enumerate}
+\item title page with:
+    \begin{enumerate}
+    \item title (short title),
+    \item full name(s) of author(s),
+    \item name and address of workplace(s),
+    \item personal e-mail address(es),
+    \end{enumerate}
+\item abstract,
+\item up-to five keywords,
+\item text,
+\item reference lists.
+\end{enumerate}
+
+Each of these elements is detailed below
+
+\subsubsection{Title (short title)}
+
+We suggest the title should be relatively short but informative. If a long title is necessary, please prepare an optional short title.
+
+{\tt cej.cls} document class allows to introduce title with
+{\tt \verb+\title{Put title of your presentation here}+}
+command in document preamble.
+
+\subsubsection{Name(s) of author(s)}
+
+A list of all authors of the paper should be prepared. We need full first name, initial(s) for middle name(s) and full last name. Use
+{\tt \begin{verbatim}
+\author{First~author\inst{1}\inst{2}\email{email@first.author.com},
+        Second~author\inst{1},
+        Third~author\inst{2}\inst{3}\email{email@third.author.com}}
+\end{verbatim}}
+
+\subsubsection{Name and address of workplace(s)}
+
+Authors' affiliations should be indicated in this section. Either end-note or footnote (end-note recommended) can be used to present additional information (for example: permanent, adequate postal addresses).
+
+\subsubsection{Personal e-mail address(es)}
+
+At least one e-mail address is needed. It will be used as the corresponding author's email address in all contacts with the authors. See  {\tt \verb+\author{...}+} how to add your e-mail address.
+
+\subsubsection{Abstract}
+
+An abstract must accompany every article. It should be a brief summary of the significant items of the main paper. An abstract should give concise information about the content of the core idea of your paper. It should be informative and not only present the general scope of the paper but also indicate the main results and conclusions. An abstract should not normally exceed 200 words. It should not contain literature citations or allusions to the tables or illustrations. All non-standard symbols and abbreviations should be defined.
+
+In combination with the title and key-words, the abstract is an indicator of the content of the paper. Authors should remember that on-line systems rely heavily on the content of titles and abstracts to identify articles in electronic bibliographic databases and search engines. They are therefore requested to take great care in preparing these elements.
+
+Use {\tt \verb+\abstract{...}+} in order to include abstract of your manuscript.
+
+\subsubsection{Keywords}
+
+A list of keywords, proposed by authors, separated by {\tt \verb+\*\+}  is required. Up to five keywords is suggested.
+
+Use {\tt \verb+\keywords{key word 1 \*\ key word 2 \*\ key word 3}+} to add your keywords.
+
+
+\subsubsection{Text}
+
+\paragraph{General rules for writing}
+\begin{itemize}
+\item use simple and declarative sentences, avoid long sentences, in which the meaning may be lost by complicated construction;
+\item be concise, avoid idle words;
+\item make your argumentation complete; use commonly understood terms; define all non-standard symbols and abbreviations when you introduce them;
+\item explain all acronyms and abbreviations when they first appear in the text;
+\item use all units consistently throughout the article;
+\item be self-critical as you review your drafts.
+\end{itemize}
+
+\paragraph{Structure of a paper}
+    Research papers and review articles should follow a strict structure. Generally a standard scientific paper is divided into:
+\begin{itemize}
+\item introduction: you present the subject of your paper clearly, you indicate the scope of the subject, you present the goals of your paper and finally the organization of your paper;
+\item main text: you present all important elements of your scientific message;
+\item conclusion: you summarize your paper.
+\end{itemize}
+
+
+    Experimental part and/or calculations should be presented in sufficient details to enable reader to repeat the original work.
+
+
+Use
+\verb+\section{...}+,
+\verb+\subsection{...}+,
+\verb+\subsubsection{...}+,
+\verb+\paragraph{...}+
+to organize your manuscript.
+
+
+\paragraph{Footnotes/End-notes/Acknowledgments}
+We encourage authors to restrict the use of footnotes. If necessary, please make end-notes rather than footnotes. Allowable footnotes/end-notes may include:
+
+\begin{itemize}
+\item the designation of the corresponding author of the paper;
+\item the current address of an author (if different from that shown in the affiliation);
+\item traditional footnote content.
+\end{itemize}
+
+
+    Information concerning research grant support should appear in a separate Acknowledgment section ({\tt \verb+\section*{Acknowledgments}+}) at the end of the paper, not in a footnote. Acknowledgments of the assistance of colleagues or similar notes of appreciation should also appear in an Acknowledgments section, not in footnotes.
+
+\paragraph{Tables}
+    Authors should use tables only to achieve concise presentation, or where the information cannot be given satisfactorily in other ways. Tables should be numbered consecutively using Arabic numerals and referred to in the text by number. Each table should have an explanatory caption which should be as concise as possible. Use {\tt \verb+\label{XXX}+} and {\tt \verb+\ref{XXX}+} combination to refer to Tables \ref{tab1}, \ref{tab2}.
+
+\begin{table}
+\caption{A table caption should be put {\bfseries above} the table.\label{tab1}}
+\begin{tabular}{lcc}
+\hline
+      & 1st column & 2nd column \\
+\hline \hline
+1st row & $a_{11}$ & $a_{12}$ \\
+2nd row & $a_{21}$ & $a_{22}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+{\tt
+\begin{verbatim}
+\begin{table}
+\caption{A table caption.\label{tab1}}
+\begin{tabular}{lcc}
+\hline
+      & 1st column & 2nd column \\
+\hline \hline
+1st row & $a_{11}$ & $a_{12}$ \\
+2nd row & $a_{21}$ & $a_{22}$ \\
+\hline
+\end{tabular}
+\end{table}
+\end{verbatim}
+}
+
+\begin{table}
+\caption{A table caption of Tab. \ref{tab2}.\label{tab2}}
+\begin{tabular}{lcc}
+\hline
+      & 1st column & 2nd column \\
+\hline \hline
+1st row & $b_{11}$ & $b_{12}$ \\
+2nd row & $b_{21}$ & $b_{22}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}
+\caption{\label{tab-symbols} Standard mathematical symbols.}
+\begin{tabular}{lll}
+\hline
+symbol & \LaTeX source & description \\
+\hline\hline
+$\propto$ & {\tt \verb+\propto+} & proportional to \\
+$\equiv$  & {\tt \verb+\equiv+} & equivalent to \\
+$\approx$ & {\tt \verb+\approx+} & approximately equal \\
+$\sim$    & {\tt \verb+\sim+} & asymptotically equal to, similar to \\
+$\to$     & {\tt \verb+\to+} & tends to \\
+$c^*$     & {\tt \verb+c^*+} & complex conjugate of c \\
+$\mathbf{A^\dag}$ & {\tt \verb+\mathbf{A}^\dag+} & Hermitian conjugate of matrix A \\
+$\mathbf{A}^T$ & {\tt \verb+\mathbf{A}^T+} & transpose of matrix A \\
+$\langle ...\rangle$ & {\tt \verb+\langle ... \rangle+} & average \\
+\textmu & {\tt \verb+\textmu+} & micro \\
+\%  & {\tt \verb+\%+} & percent \\
+\textperthousand  & {\tt \verb+\textperthousand+} & per-thousand \\
+\textdegree & {\tt \verb+\textdegree+} & degree (angle and/or temperature) \\
+\hline
+\end{tabular}
+\end{table}
+
+
+\paragraph{Figures}
+    Authors may use line diagrams and photographs to illustrate theses from their text. The figures should be clear, easy to read and of good quality. Styles and fonts should match those in the main body of the article. All figures must be mentioned in the text in consecutive order and be numbered with Arabic numerals. Use {\tt \verb+\label{XXX}+} and {\tt \verb+\ref{XXX}+} combination to refer to Figures \ref{fig1}, \ref{fig2}.
+
+\begin{figure}
+\framebox[4cm]{\Huge Figure 1}
+\caption{A figure caption should be placed {\bfseries below} the figure.\label{fig1}}
+\end{figure}
+
+\begin{figure}
+\framebox[4cm]{\Huge Figure 2}
+\caption{A figure caption for Fig. \ref{fig2}.\label{fig2}}
+\end{figure}
+
+{\tt
+\begin{verbatim}
+\begin{figure}
+\includegrpahics[width=0.7\textwidth]{file}
+\caption{A figure caption.\label{fig1}}
+\end{figure}
+\end{verbatim}
+}
+
+\paragraph{Typesetting}
+    Type main text in roman (upright) font. The chemical symbols and compounds, units of measure, most multi-letter operators and functions should are written in roman upright as well. The variables, constants, symbols for particles, most single-letter operators, axes and planes, channels, types (e.g., n, p), bands, geometric points, angles, lines, chemical prefixes, symmetry designations, transitions, critical points, color centers, quantum-state symbols in spectroscopy, and most single-letter abbreviations should be written in roman italic. Boldface roman type is reserved for indicating vectors and in some special cases matrices. The Latin terms:
+{\em
+et al.,
+in vivo,
+in vitro,
+ex vivo,
+in situ,
+in silico,
+etc,
+de novo,
+a priori,
+ab initio,
+vice versa,
+ad hoc,
+sensu stricte,
+versus,
+via,
+i.e.,
+c.a.,
+per se}
+must be written in roman italic.
+
+Use {\tt \verb+\begin{proposition}[Pitagoras-Einstein]+} ...{\tt \verb+\end{proposition}+} for {\bfseries proposition} environment
+\begin{proposition}[Pitagoras-Einstein]
+$E=m(a^2+b^2)$.
+\end{proposition}
+
+Use {\tt \verb+\begin{remark}+} ...{\tt \verb+\end{remark}+} for {\bfseries remark} environment
+\begin{remark}
+Remark one.
+\end{remark}
+
+\begin{remark}
+Remark two.
+\end{remark}
+
+Use {\tt \verb+\begin{theorem}[Pitagoras--Einstein]+} ...{\tt \verb+\end{theorem}+} for {\bfseries theorem} environment
+\begin{theorem}[Pitagoras-Einstein]
+\begin{equation} E=m(a^2+b^2). \end{equation}
+\end{theorem}
+
+Use {\tt \verb+\begin{proof}+} ... {\tt \verb+\end{proof}+} for {\bfseries proof} environment.
+The proof environment will be automatically finished with {\em quad erat demostrandum} sign.
+\begin{proof}
+\[ E=mc^2 \]
+\[ a^2+b^2=c^2 \]
+\[ E=m(a^2+b^2). \]
+\end{proof}
+
+\paragraph{Mathematical symbols}
+    The multiplication signs are reserved for a vector product ($\mathbf{A}\times\mathbf{B}$) and simple dot product ($\mathbf{A}\cdot\mathbf{B}$). The only exception are numbers expressed in scientific notation ($9.7\times 10^3$ MeV).
+    The use of standard symbols presented in Table \ref{tab-symbols} is strongly recommended.
+
+\paragraph{Units}
+    Units and dimensions should be expressed according to the metric system and SI units. This system is based on: meter (m), second (s), kilogram (kg), ampere (A), kelvin (K), mole (mol), and candela (cd). Most units are spaced off from the number, e.g. 12 mV. The only exceptions are:
+\begin{center}
+    1\%, 1\textperthousand, 1\textdegree C, 1\textdegree, 1', 1".
+\end{center}
+
+    Decimal multiples or sub-multiples of units are indicated by the use of prefixes
+
+\begin{center}
+    \textmu=$10^{-6}$, m$=10^{-3}$, c$=10^{-2}$, d$=10^{-1}$,
+    da$=10^1$, h$=10^2$, k$=10^3$, M$=10^6$, G$=10^9$, {\em etc}.
+\end{center}
+
+    Compound units are written as
+\begin{center}
+    4221.9 J kg$^{-1}$ K$^{-1}$ or 4221.9 J/(kg K),
+\end{center}
+    with a thin space between unit parts.
+
+
+    Authors should indicate precisely in the main text {\bfseries where tables and figures should be inserted}, if these elements are given at the end in the original version of the manuscript (or supplied in separate files).
+    If this information is not provided along with the manuscript, we will assume that the figures and/or tables should be insert at the closest position to first reference to them in the published paper.
+
+\paragraph{Multimedia and images}
+    Authors can attach files in most popular formats, including (for example):
+\begin{itemize}
+\item images in BMP, GIF, JPEG formats,
+\item multimedia files in MPEG or AVI formats.
+\end{itemize}
+
+However please keep to file types that are read by standard media players (e.g. RealPlayer, Quicktime, Windows Media Player) and/or standard office applications (Adobe Acrobat Reader, Microsoft Office etc.).
+
+    Your attachments may be accessible through links to external locations or to our internal locations (if you choose the second option, please remember to send us your attachments).
+
+    Please remember that your images, video and animation clips are intended for Internet use and we need to consider the needs of users with slow Internet connections. Please try to minimize file sizes by using a lower resolution or number of colors for images and animations (as long as the material is still clear). To help you in formatting your images (including tables and figures) or multimedia files, please submit your paper with separate attachments, which are used in your paper.
+
+\paragraph{English language}
+    Central European Journal of Physics is published only in English. Make sure that your manuscripts are clearly and grammatically written. Please note that authors who are not native-speakers of English can be provided with help in rewriting their contribution in correct English. Try to prepare your manuscript in an easily readable style; this will help avoid severe misunderstandings which might lead to rejection of the paper.
+
+\subsubsection{Reference list}
+
+A complete reference should give the reader enough information to find the relevant article. All authors (unless there are six or more) should be named in the citation. If there are six or more, list the name of the first one followed by ``et al''. Please pay particular attention to spelling, capitalization and punctuation here. Completeness of references is the responsibility of the authors. A complete reference should comprise the following:
+
+\paragraph{Reference to an article in a journal}
+Elements to cite:
+Author's Initials. Surname, -- if more authors, see examples below,
+Title of journal -- abbreviated according to the ISI standards\footnote{\tt http://images.isiknowledge.com/WOK46/help/WOS/0-9\_abrvjt.html},
+volume number, page or article number (year of publication).
+Please supply DOI or URL for e-version of the papers.
+See Refs. \cite{journal-1, journal-2, journal-3, journal-4, journal-5, journal-6, journal-7, journal-8} for example.
+
+\paragraph{Reference to a book}
+Elements to cite:
+Author's Initials. Surname,
+Title,
+Edition -- if not the first
+(Publisher, Place of publication, Year of publication)
+\cite{book}.
+
+
+\paragraph{Reference to a part/chapter book}
+Elements to cite:
+Author's Initials. Surname,
+In: Editor's Initials. Editor's Surname (Ed.),
+Book Title,
+Edition -- if not the first,
+(Publisher, Place of publication, Year of publication)
+page number \cite{chapter}.
+
+
+\paragraph{Reference to a preprint}
+Elements to cite:
+Author's Initials. Surname,
+arXiv:preprint-number and version \cite{arxiv-1,arxiv-2}.
+
+\paragraph{Reference to a conference proceedings}
+Elements to cite:
+Author's Initials. Surname,
+In: Editor's Initials. Editor's Surname (Ed.),
+Conference,
+date, place (town and country) of conference
+(Publisher, place of publication, year of publication)
+page number \cite{proceedings}.
+
+
+\paragraph{Reference to a thesis}
+Elements to cite:
+Author's Initials. Surname,
+D.Sc./Ph.D./M.Sc./B.Sc. thesis,
+University,
+(town, country, year of publication) \cite{thesis}.
+
+
+\paragraph{Reference to an article in a newspaper}
+Elements to cite:
+Author's Initials. Surname,
+Newspaper Title,
+date of publication,
+page number \cite{newspaper-1,newspaper-2}.
+
+
+\paragraph{Reference to a patent}
+Elements to cite:
+Originator,
+Series designation which may include full date \cite{patent}.
+
+
+\paragraph{Reference to a standard}
+Elements to cite:
+Standard symbol and number,
+Title \cite{standard-1,standard-2}.
+
+Please add language of publication for materials which are not written in English. Indicate materials accepting for publications by adding ``(in press)''. Please avoid references to unpublished materials, private communication and web pages.
+
+You should make sure the information is correct so that the linking reference service may link abstracts electronically. For the same reason please separate each reference from the others.
+
+Before submitting your article, please ensure you have checked your paper for any relevant references you may have missed.
+
+
+\begin{thebibliography}{99}
+\bibitem{journal-1} A.~P.~Raposo, H.~J.~Weber, D.~E.~Alvarez--Castillo, M.~Kirchbach, Cent. Eur. J. Phys. 5, 253 (2007)
+\bibitem{journal-2} J.~Barth et al. (SAPHIR Collaboration), Phys. Lett. B 572, 127 (2003)
+\bibitem{journal-3} S.~Chekanov et al., Eur. Phys. J. C 51, 289 (2007)
+\bibitem{journal-4} K.~Malarz, Postepy Fizyki 57, 235 (2006) (in Polish)
+\bibitem{journal-5} G.~Meng, Cent. Eur. J. Phys., DOI:10.2478/s11534-007-0038-1
+\bibitem{journal-6} R.~Hegselmann, U.~Krause, Journal of Artificial Societies and Social Simulation (2006), http://jasss.soc.surrey.ac.uk/9/3/10.html
+\bibitem{journal-7} A.~Dybala, Cent. Eur. J. Chem. (in press)
+\bibitem{journal-8} A.~Dybala, Przeglad chemiczny (in Polish, in press)
+\bibitem{book} M.~Lister, Fundamentals of Operating Systems, 3rd edition (Springer-Verlag, New York, 1984)
+\bibitem{chapter} C.~K.~Clenshaw, K.~Lord, In: B.~K.~P.~Scaife (Ed.), Studies in Numerical Analysis (Academic Press, London and New York, 1974) 95
+\bibitem{arxiv-1} M.~Majewski, K.~Malarz, arXiv:cond-mat/0609635v2 [cond-mat.stat-mech]
+\bibitem{arxiv-2} J.~A.~C.~E.~Solano, arXiv:0707.1343v1 [astro-ph]
+\bibitem{proceedings} A.~Kaczanowski, K.~Malarz, K.~Kulakowski, In: T.~E.~Simos (Ed.), International Conference of Computational Methods in Science and Engineering, Sep. 12-16, 2003, Kastoria, Greece (World Scientific, Singapore 2003) 258
+\bibitem{thesis} A.~J.~Agutter, Ph.D. thesis, Edinburgh University (Edinburgh, UK, 1995)
+\bibitem{newspaper-1} A.~Sherwin, The Times, Jul. 13, 2007, 1
+\bibitem{newspaper-2} M.~Dzierzanowski, Wprost, Jul. 8, 2007, 18 (in Polish)
+\bibitem{patent} Philip Morris Inc., European patent application 0021165 A1, Jan. 7, 1981
+\bibitem{standard-1} ISO 2108:1992, Information and documentation --- International standard book numbering (ISBN)
+\bibitem{standard-2} ISO/TR 9544:1988, Information processing --- Computer-assisted publishing --- Vocabulary
+\end{thebibliography}
+
+\end{document}
